@@ -1,0 +1,70 @@
+{
+  "name": "@seedrs/storybook-addon-info",
+  "description": "A storybook addon for documenting UI components",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "author": "tech@seedrs.com",
+  "scripts": {
+    "build": "babel src --presets babel-preset-env --out-dir lib",
+    "commit": "git-cz",
+    "lint": "eslint ./src/*",
+    "test": "node scripts/test.js",
+    "semantic-release": "semantic-release --no-ci -b $BUILDKITE_JOB_ID"
+  },
+  "devDependencies": {
+    "@seedrs/eslint-config-seedrs-base": "^1.1.1",
+    "@seedrs/eslint-config-seedrs-react": "^1.0.0",
+    "@seedrs/seedrs-ui-colors": "^0.8.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.6.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.22.0",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.6.0",
+    "polished": "^2.2.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "semantic-release": "^15.9.15",
+    "styled-components": "^3.4.9"
+  },
+  "peerDependencies": {
+    "react-dom": "*"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "testMatch": [
+      "<rootDir>__tests__/**/*.{js}"
+    ],
+    "testEnvironment": "node",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
+    ],
+    "moduleNameMapper": {},
+    "moduleFileExtensions": [
+      "js"
+    ]
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "dependencies": {
+    "@storybook/components": "^3.4.11",
+    "marked": "^0.5.1",
+    "prismjs": "^1.15.0",
+    "react-addons-create-fragment": "^15.6.2",
+    "react-dom": "^16.5.2"
+  }
+}
