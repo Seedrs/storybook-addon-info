@@ -6,6 +6,9 @@ import StoryDocumentation from './ui/documentation';
 import StoryPanel from './ui/panel';
 import StorySource from './ui/source';
 import StoryProps from './ui/props';
+import {
+  StoryViewWrapper
+} from './style';
 
 class Story extends Component {
   constructor (props) {
@@ -26,16 +29,20 @@ class Story extends Component {
 
     return (
       <Fragment>
-        <StoryHeader kind={kind} story={story} />
-        { beforeDocumentation && <StoryDocumentation documentation={beforeDocumentation} /> }
+        <StoryViewWrapper noPaddingTop>
+          <StoryHeader kind={kind} story={story} />
+          { beforeDocumentation && <StoryDocumentation documentation={beforeDocumentation} /> }
+        </StoryViewWrapper>
         <StoryRender>{children}</StoryRender>
-        <StoryPanel isClosed={false} heading="Story">
-          <StorySource>{children}</StorySource>
-        </StoryPanel>
-        <StoryPanel heading="Props">
-          <StoryProps components={propTypes}>{children}</StoryProps>
-        </StoryPanel>
-        { afterDocumentation && <StoryDocumentation documentation={afterDocumentation} /> }
+        <StoryViewWrapper>
+          <StoryPanel isClosed={false} heading="Story">
+            <StorySource>{children}</StorySource>
+          </StoryPanel>
+          <StoryPanel heading="Props">
+            <StoryProps components={propTypes}>{children}</StoryProps>
+          </StoryPanel>
+          { afterDocumentation && <StoryDocumentation documentation={afterDocumentation} /> }
+        </StoryViewWrapper>
       </Fragment>
     );
   }
