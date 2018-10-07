@@ -17,12 +17,14 @@ const StorySource = (props) => {
       node={root}
       depth={0}
     />
-  ));
+  )); 
+
+  const jsx = htmlDecode(renderToStaticMarkup(source));
 
   return (
     <Markdown source={
-      `\`\`\`javascript
-${htmlDecode(renderToStaticMarkup(source))}
+      `\`\`\`jsx
+${jsx}
       \`\`\``}/>
   );
 };

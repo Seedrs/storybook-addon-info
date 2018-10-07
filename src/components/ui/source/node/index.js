@@ -46,17 +46,18 @@ const Node = (props) => {
   } = props;
 
   const { name, text, children } = getData(node);
+  const pad = ''.padStart(2 * depth, ' ');
 
   // Just text
   if (!name) {
-    return text;
+    return `${pad}${text}\n`;
   }
 
   // Single-line tag
   if (!children) {
     return (
-      <div>
-        <span>&lt;{name}</span>
+      <Fragment>
+        {`${pad}<${name}`}
         <Props
           node={node}
           singleLine
@@ -65,15 +66,15 @@ const Node = (props) => {
           maxPropArrayLength={maxPropArrayLength}
           maxPropStringLength={maxPropStringLength}
         />
-        <span>/&gt;</span>
-      </div>
+        {`${pad}</${name}>\n`}
+      </Fragment>
     );
   }
 
   // tag with children
   return (
     <Fragment>
-      {`<${name}`}
+      {`${pad}<${name}`}
       <Props
         node={node}
         maxPropsIntoLine={maxPropsIntoLine}
@@ -81,7 +82,7 @@ const Node = (props) => {
         maxPropArrayLength={maxPropArrayLength}
         maxPropStringLength={maxPropStringLength}
       />
-      {'>'}
+      {'>\n'}
       {React.Children.map(children, childElement => (
         <Node
           node={childElement}
@@ -92,7 +93,7 @@ const Node = (props) => {
           maxPropStringLength={maxPropStringLength}
         />
       ))}
-      {`</${name}>`}
+      {`${pad}</${name}>\n`}
     </Fragment>
   );
 };
