@@ -7,8 +7,5 @@ export const StoryPreview = styled.div`
   ${margin(rem('12px'))}
   ${padding(rem('32px'), rem('24px'))}
   border-radius: ${rem('2px')};
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: ${rem('1px')} dotted ${colors.neutral.midlight};
 `;
