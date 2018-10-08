@@ -16,6 +16,8 @@ const StorySource = (props) => {
       key={idx}
       node={root}
       depth={0}
+      maxPropsIntoLine={8}
+      maxPropArrayLength={8}
     />
   )); 
 
