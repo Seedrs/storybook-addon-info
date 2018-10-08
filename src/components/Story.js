@@ -44,9 +44,11 @@ class Story extends Component {
               <StoryPanel isClosed={false} heading="Story">
                 <StorySource>{children}</StorySource>
               </StoryPanel>
-              <StoryPanel heading="Props">
-                <StoryProps components={propTypes}>{children}</StoryProps>
-              </StoryPanel>
+              { propTypes && propTypes.length && (
+                <StoryPanel heading="Props">
+                  <StoryProps components={propTypes}>{children}</StoryProps>
+                </StoryPanel>
+              )}
             </Fragment>
           )}
           { afterDocumentation && <StoryDocumentation documentation={afterDocumentation} /> }
