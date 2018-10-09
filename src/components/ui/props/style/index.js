@@ -2,7 +2,6 @@
 import styled from 'styled-components';
 import { rem, margin } from 'polished';
 import { lato } from '../../fonts';
-import { colors } from '../../colors';
 
 export const StoryPropsWrapper = styled.div`
   ${margin(rem('16px'), 0)}
@@ -15,5 +14,5 @@ export const Heading = styled.h3`
   line-height: ${rem('20px')};
   letter-spacing: ${rem('0.5px')};
   font-weight: 700;
-  color: ${colors.neutral.xdark};
+  color: #212B36;
 `;

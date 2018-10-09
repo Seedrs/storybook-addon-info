@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { rem, padding, margin, transitions } from 'polished';
-import { colors } from '../../colors';
 import { lato } from '../../fonts';
 import { FadeIn } from '../../animation';
 
@@ -15,8 +14,8 @@ export const PanelHeader = styled.header`
   ${margin(rem('8px'), rem('12px'))}
   ${padding(rem('8px'), rem('12px'))}
   ${transitions('border-color 300ms ease-in-out')}
-  border-top: ${rem('1px')} solid ${props => (props.isClosed ? colors.neutral.midlight : colors.neutral.middark)};
-  border-bottom: ${rem('1px')} solid ${props => (props.isClosed ? colors.neutral.midlight : colors.neutral.middark)};
+  border-top: ${rem('1px')} solid ${props => (props.isClosed ? '#DFE3E8' : '#637381')};
+  border-bottom: ${rem('1px')} solid ${props => (props.isClosed ? '#DFE3E8' : '#637381')};
   background-color: white;
   cursor: pointer;
 `;
@@ -48,7 +47,7 @@ export const PanelHeading = styled.h4`
   text-transform: uppercase;
   letter-spacing: ${rem('1px')};
   font-weight: 700;
-  color: ${props => (props.isClosed ? colors.neutral.base : colors.neutral.xdark)};
+  color: ${props => (props.isClosed ? '#C4CDD5' : '#212B36')};
 `;
 
 export const PanelContent = styled.div`

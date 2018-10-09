@@ -53,7 +53,7 @@ const Node = (props) => {
     return `${pad}${text}\n`;
   }
 
-  // Single-line tag
+  // Single-line tag 
   if (!children) {
     return (
       <Fragment>
@@ -66,7 +66,7 @@ const Node = (props) => {
           maxPropArrayLength={maxPropArrayLength}
           maxPropStringLength={maxPropStringLength}
         />
-        {`${pad}</${name}>\n`}
+        {`></${name}>\n`}
       </Fragment>
     );
   }

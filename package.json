@@ -1,7 +1,7 @@
 {
   "name": "@seedrs/storybook-addon-info",
   "description": "A storybook addon for documenting UI components",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "main": "lib/index.js",
   "author": "tech@seedrs.com",
   "scripts": {
@@ -14,7 +14,6 @@
   "devDependencies": {
     "@seedrs/eslint-config-seedrs-base": "^1.1.1",
     "@seedrs/eslint-config-seedrs-react": "^1.0.0",
-    "@seedrs/seedrs-ui-colors": "^0.8.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -26,14 +25,14 @@
     "eslint-plugin-jest": "^21.22.0",
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
-    "polished": "^2.2.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.5.2",
-    "semantic-release": "^15.9.15",
-    "styled-components": "^3.4.9"
+    "semantic-release": "^15.9.15"
   },
   "peerDependencies": {
-    "react-dom": "*"
+    "react-dom": "*",
+    "prop-types": "*",
+    "react": "*",
+    "polished": "*",
+    "styled-components": "*"
   },
   "config": {
     "commitizen": {

@@ -4,7 +4,7 @@ import StoryHeader from './ui/header';
 import StoryRender from './ui/story';
 import StoryDocumentation from './ui/documentation';
 import StoryPanel from './ui/panel';
-import StoryPreview from './ui/preview';
+import StoryDemo from './ui/demo';
 import StorySource from './ui/source';
 import StoryProps from './ui/props';
 import {
@@ -24,18 +24,20 @@ class Story extends Component {
         story
       },
       propTypes,
-      showPreview,
+      showDemo,
       showStory,
       beforeDocumentation,
       afterDocumentation
     } = this.props;
+
+    const showProptypes = (!!propTypes && !!propTypes.length);
 
     return (
       <Fragment>
         <StoryViewWrapper noPaddingTop>
           <StoryHeader kind={kind} story={story} />
           { beforeDocumentation && <StoryDocumentation documentation={beforeDocumentation} /> }
-          { showPreview && <StoryPreview { ...showPreview } />}
+          { showDemo && <StoryDemo { ...showDemo } />}
         </StoryViewWrapper>
         { showStory && <StoryRender>{children}</StoryRender> }
         <StoryViewWrapper>
@@ -44,7 +46,7 @@ class Story extends Component {
               <StoryPanel isClosed={false} heading="Story">
                 <StorySource>{children}</StorySource>
               </StoryPanel>
-              { propTypes && propTypes.length && (
+              { showProptypes && (
                 <StoryPanel heading="Props">
                   <StoryProps components={propTypes}>{children}</StoryProps>
                 </StoryPanel>
@@ -71,7 +73,7 @@ Story.propTypes = {
   children: PropTypes.node,
   context: PropTypes.object,
   propTypes: PropTypes.array,
-  showPreview: PropTypes.bool,
+  showDemo: PropTypes.bool,
   showStory: PropTypes.bool,
   beforeDocumentation: PropTypes.oneOfType([
     PropTypes.string,
